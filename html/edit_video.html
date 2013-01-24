@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  	<meta charset ="utf-8">
+  	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="description" content="Page for editing video information on a critical information platform!">
+    <meta name="keywords" content="edit, video information, critical society, information platform, videos, literature, politics">
+    <meta name="author" content="Christian Roepke">
+    <meta name="robots" content="noindex,nofollow">
+  	<title>Edit video</title>
+  	<link rel="stylesheet" type="text/css" href="../stylesheets/index.css">
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  	<script type="text/javascript" src="../js/index.js"></script>
+  	<script type="text/javascript" src="../js/edit_video.js"></script>
+  	<script type="text/javascript" src="../js/video_validation.js"></script>
+  	<script type="text/javascript" src="../js/video_search.js"></script>
+</head>
+
+<body>
+	<header>
+		<a href="index.html"><h1>Critical information network</h1></a>
+		<nav>
+			<ul id="nav_bar">
+				<li><a href="topics_index.html">Topics</a></li>
+				<li><a href="literature_index.html">Literature</a></li>
+				<li><a href="videos_index.html" class="active">Videos</a></li>
+				<li><a href="#">Background</a>
+					<ul>
+						<li><a href="definitions_index.html">Glossary</a></li>
+						<li><a href="highlight_information.html">Highlighting</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div id="main_wrapper">
+		<div id="main" class="authorized">
+			<h3> Edit video </h3>
+			<div id="validation_status"></div>	
+			<form id="video_form" method="post" action="../php/update_video.php">
+
+		      <input type="hidden" id="video_id" name="id">
+
+		  		<fieldset>
+		  			 <div id="movie_select_wrapper">
+                        <span id="movie_load_status"></span><br>
+                        <select id="movie_select"></select>
+                        <button id="movie_select_bt" type="button">OK</button>
+                        <button id="movie_cancel_bt" type="button">Cancel</button>
+                    </div>
+
+		            <label for="title">Please enter a title:</label>  			
+        			<input id="title" name="title" type="text" required size="30">
+        			<button id="search_bt" type="button">Search online</button><br>
+
+                    
+                    <label for="cover_url">Please enter the URL for the cover:</label>
+                    <input id="cover_url" name="cover_url" type="url" size="30" title="A valid URL has to start with 'http://' and end with '.jpg, .png, .gif'" pattern="http:\/\/.{0,100}(\.gif|\.jpg|\.png|\.jpeg)"><br>	
+
+                    <label for="summary_long">Please write a summary:</label><br>
+                    <textarea id="summary_long" name="summary_long" rows="10" cols="60" required></textarea><br>
+
+                    <label for="length">Please enter the length (in minutes):</label>
+                    <input id="length" name="length" type="number"><br>
+
+                    <label for="director">Please enter the name of the director: </label>
+                    <input id="director" name="director" type="text" placeholder=" e.g. Erwin Wagenhofer" size="30"><br>
+
+                    <label for="year">Please enter the year: </label>
+                    <input id="year" name="year" type="number" value="2012"><br>
+
+                    <label for="url">Please enter the URL to the video:</label>
+                     <input id="url" name="url" type="url" size="30" title="A valid URL has to start with 'http://'" pattern="http:\/\/.{0,100}"><br>
+		        </fieldset>
+		      
+		  		<input type="submit" value="Submit" class="button">
+		  	</form>
+		</div>
+	</div>
+
+	<footer>
+		<div id="footer_wrapper">
+			&copy; <a href="contact.html">Critical Information Network</a>
+			<a id="login_status" href="login.html"></a>
+		</div>
+	</footer>
+
+</body>
+
+</html>

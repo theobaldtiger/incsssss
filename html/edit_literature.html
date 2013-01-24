@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  	<meta charset ="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="description" content="Page for editing literature on a critical information platform!">
+    <meta name="keywords" content="edit literature, critical society, information platform, videos, literature, politics">
+    <meta name="author" content="Christian Roepke">
+    <meta name="robots" content="noindex,nofollow">
+  	<title>Edit literature</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/index.css">
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+  	<script type="text/javascript" src="../js/literature_search.js"></script>
+    <script type="text/javascript" src="../js/edit_literature.js"></script>
+    <script type="text/javascript" src="../js/literature_validation.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html"><h1>Critical information network</h1></a>
+        <nav>
+            <ul id="nav_bar">
+                <li><a href="topics_index.html">Topics</a></li>
+                <li><a href="literature_index.html" class="active">Literature</a></li>
+                <li><a href="videos_index.html">Videos</a></li>
+                <li><a href="#">Background</a>
+                    <ul>
+                        <li><a href="definitions_index.html">Glossary</a></li>
+                        <li><a href="highlight_information.html">Highlighting</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="main_wrapper">
+        <div id="main" class="authorized">
+        	<h3>Edit literature</h3>  	
+          	<div id="validation_status"></div>
+
+          	<form id="literature_form" method="post" action="../php/update_literature.php">
+                <input type="hidden" id="literature_id" name="id">
+
+                <fieldset>
+                    <div id="literature_select_wrapper">
+                        <span id="literature_load_status"></span><br>
+                        <select id="literature_select"></select>
+                        <button id="literature_select_bt" type="button">OK</button>
+                        <button id="literature_cancel_bt" type="button">Cancel</button>
+                    </div>
+
+                    <label for="title">Please enter a title: <span class="validation">*</span></label>            
+                    <input id="title" name="title" type="text" required size="30">
+                    <button id="search_bt" type="button">Search online</button><br>
+
+                    <label for="type">Please select the literature type: <span class="validation">*</span> </label>
+                    <select id="type" name="type" required>
+                        <option value="">Select type</option>
+                        <option value="book">Book</option>
+                        <option value="scientific_article">Scientific article</option>
+                        <option value="magazine_article">Magazine article</option>
+                        <option value="newspaper_article">Newspaper article</option>
+                        <option value="blogpost">Blogpost</option>
+                    </select><br>
+
+                    <label for="cover_url">Please enter the URL for the cover:</label>
+                    <input id="cover_url" name="cover_url" type="url" size="30" title="A valid URL has to start with 'http://' and end with '.jpg, .png, .gif or gbs_api'" pattern="http:\/\/.{0,300}(\.gif|\.jpg|\.png|\.jpeg|gbs_api)"><br>
+
+                    <label for="summary">Please write a summary: <span class="validation">*</span></label><br>
+                    <textarea id="summary" name="summary" rows="10" cols="60" required></textarea><br>
+
+                    <label for="number_of_pages">Please enter the number of pages:</label>
+                    <input id="number_of_pages" name="nr_of_pages" type="number"><br>
+
+                    <label for="author">Please enter the name of the author: </label>
+                    <input id="author" name="author" type="text" size="30"><br>     
+                    
+                    <div id= "isbn_10_wrapper">
+                        <label for="isbn_10">Please enter the ISBN-10 number:</label>
+                        <input id="isbn_10" name="isbn_10" type="text" size="30" title="A valid ISBN-10 number has exactly ten digits" pattern="^\d{10}$"><br>
+                    </div>
+
+                    <div id= "isbn_13_wrapper">
+                        <label for="isbn_13">Please enter the ISBN-13 number:</label>
+                        <input id="isbn_13" name="isbn_13" type="text" size="30" title="A valid ISBN-13 number has the format ddd-dddddddddd" pattern="^\d{3}-\d{10}$"><br>
+                    </div>
+
+                    <div id="doi_wrapper">
+                        <label for="doi">Please enter the DOI:</label>
+                        <input id="doi" name="doi" type="text" size="30"><br>
+                    </div>
+
+                    <div id="journal_name_wrapper">
+                        <label for="journal_name">Please enter the journal name:</label>
+                        <input id="journal_name" name="journal_name" type="text" size="30"><br>
+                    </div>
+
+                    <div id="magazine_name_wrapper">
+                        <label for="magazine_name">Please enter the magazine name:</label>
+                        <input id="magazine_name" name="magazine_name" type="text" size="30"><br>
+                    </div>
+
+                    <div id ="newspaper_name_wrapper">
+                        <label for="newspaper_name">Please enter the newspaper name:</label>
+                        <input id="newspaper_name" name="newspaper_name" type="text" size="30"><br>
+                    </div>
+
+                    <div id ="blog_name_wrapper">
+                        <label for="blog_name">Please enter the blog name:</label>
+                        <input id="blog_name" name="blog_name" type="text" size="30"><br>
+                    </div>
+
+                    <div id="edition_wrapper">
+                        <label for="edition">Please enter the edition:</label>
+                        <input id="edition" name="edition" type="number"><br>
+                    </div>
+
+                    <div id="publication_date_wrapper">
+                        <label for="publication_date">Please enter the publication date: </label>
+                        <input id="publication_date" name="publication_date" type="date"><br>
+                    </div>
+
+                    <div id="publisher_wrapper">
+                        <label for="publisher">Please enter the publisher:</label>
+                        <input id="publisher" name="publisher" type="text" size="30"><br>
+                    </div>
+                    
+                    <label for="url">Please enter the URL:</label>
+                    <input id="url" name="url" type="url" size="30" title="A valid URL has to start with 'http://'" pattern="http:\/\/.{0,300}"><br>
+                </fieldset>
+
+                <input type="submit" value="Submit" class="button">
+
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer_wrapper">
+            &copy; <a href="contact.html">Critical Information Network</a>
+            <a id="login_status" href="login.html"></a>
+        </div>
+    </footer>
+
+</body>
+</html>

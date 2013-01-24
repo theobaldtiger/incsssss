@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  	<meta charset ="utf-8">
+  	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="description" content="Page for highlighting glossary terms on a critical information platform!">
+    <meta name="keywords" content="highlight, glossary terms, critical society, information platform, videos, literature, politics">
+    <meta name="author" content="Christian Roepke">
+    <meta name="robots" content="index,follow">
+  	<title>Information highlighting</title>
+  	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" type="text/css" href="../stylesheets/index.css">
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+  	<script type="text/javascript" src="../js/index.js"></script>
+  	<script type="text/javascript" src="../js/highlight_information.js"></script>
+</head>
+
+<body>
+	<header>
+		<a href="index.html"><h1>Critical information network</h1></a>
+		<nav>
+			<ul id="nav_bar">
+				<li><a href="topics_index.html">Topics</a></li>
+				<li><a href="literature_index.html">Literature</a></li>
+				<li><a href="videos_index.html">Videos</a></li>
+				<li><a href="#" class="active">Background</a>
+					<ul>
+						<li><a href="definitions_index.html">Glossary</a></li>
+						<li><a href="highlight_information.html" class="active">Highlighting</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div id="main_wrapper">
+		<div id="main">
+			<h3>Information highlighting</h3>
+			<p>
+				Hey, and a warm welcome. Here you can either upload a textfile from your computer or simply paste in the text of an article (or similar) you have found on the Internet. We will then try to provide you with additional information from our glossary. Links will be replaced with their anchor text.
+			</p>
+			<button id="toggle_edit_bt">Save</button> <input id="file_input" type="file" accept="text/plain">
+			<div id="information_input" contenteditable="true"></div>
+		</div>
+	</div>
+
+	<footer>
+		<div id="footer_wrapper">
+			&copy; <a href="contact.html">Critical Information Network</a>
+			<a id="login_status" href="login.html"></a>
+		</div>
+	</footer>
+	
+</body>
+</html>

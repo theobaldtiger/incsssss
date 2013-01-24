@@ -1,0 +1,10 @@
+/* Section formatting */
+
+article > section {
+	border-bottom: 1px solid #AAA;
+	padding: 5px 0 15px 0;
+}
+
+article > section:last-child{
+	border: none;
+}

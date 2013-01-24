@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  	<meta charset ="utf-8">
+  	<meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="description" content="Login page on a critical information platform!">
+    <meta name="keywords" content="login, critical society, information platform, videos, literature, politics">
+    <meta name="author" content="Christian Roepke">
+    <meta name="robots" content="noindex,nofollow">
+  	<title>Critical information network </title>
+  	<link rel="stylesheet" type="text/css" href="../stylesheets/index.css">
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  	<script type="text/javascript" src="../js/index.js"></script>
+  	<script type="text/javascript" src="../js/login.js"></script>
+</head>
+
+<body>
+	<header>
+		<a href="index.html"><h1>Critical information network</h1></a>
+		<nav>
+			<ul id="nav_bar">
+				<li><a href="topics_index.html">Topics</a></li>
+				<li><a href="literature_index.html">Literature</a></li>
+				<li><a href="videos_index.html">Videos</a></li>
+				<li><a href="#">Background</a>
+					<ul>
+						<li><a href="definitions_index.html">Glossary</a></li>
+						<li><a href="highlight_information.html">Highlighting</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div id="main_wrapper">
+		<div id="main">
+			<h3>Login Page</h3>
+			<p id="login_status_msg"></p>
+			<form id="login_form" method="post">
+				<fieldset>
+					<label class="login_label" for="login_name">Login name: </label>
+					<input id="login_name" name="login_name" type="text"><br>
+
+					<label class="login_label" for="password">Password: </label>
+					<input id="password" name="password" type="password"><br>
+				</fieldset>
+					<button class="button">Login</button>
+			</form>
+
+			<button id="logout_bt" class="button">Logout</button>
+		</div>
+	</div>
+
+
+	<footer>
+		<div id="footer_wrapper">
+			&copy; <a href="contact.html">Critical Information Network</a>
+			<a id="login_status" href="login.html">login</a>
+		</div>
+	</footer>
+	
+</body>
+</html>
